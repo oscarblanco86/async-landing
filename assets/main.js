@@ -1,6 +1,6 @@
-const API = 'https://youtube-v31.p.rapidapi.com/search?channelId=UCubzOPzwOE5v95f4D-GMJ7g&part=snippet%2Cid&order=date&maxResults=9';
+const API = 'https://youtube-v31.p.rapidapi.com/playlistItems?playlistId=PLK_h7zlYCs-cKBXOCKksHEel-O7d2hsP-&part=snippet&maxResults=9';
 
-const content = null || document.getElementById('çontent');
+const content = null || document.getElementById('content');
 
 const options = {
 	method: 'GET',
@@ -11,7 +11,7 @@ const options = {
 };
 
 async function fetchData(urlApi) {
-    const response = await fetch(urlApi, optons);
+    const response = await fetch(urlApi, options);
     const data = await response.json();
     return data;
 }
@@ -40,12 +40,3 @@ async function fetchData(urlApi) {
         // reto crear un mensaje que despliegue el error
     }
 })();
-
-
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.text();
-// 	console.log(result);
-// } catch (error) {
-// 	console.error(error);
-// }
